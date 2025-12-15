@@ -1,8 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Projects() {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -30,35 +32,44 @@ export default function Projects() {
       title: "UM Convo App",
       description: "A mobile app that helps UM graduates manage and access their convocation information, schedules, and related services easily in one place.",
       image: "/umconvo.png",
-      tags: ["React Native","React", "Node.js", "Express.js", "JSX", "Tailwind CSS", "Firebase", "RestAPI"]
+      tags: ["React Native","React", "Node.js", "Express.js", "JSX", "Tailwind CSS", "Firebase", "RestAPI"],
+      link: "/umconvo-app"
     },
     {
       title: "Health Care Product Website",
       description: "Full-featured online shopping experience with seamless checkout and inventory management.",
       image: "/designduel.png",
-      tags: ["Figma", "User Interface Design", "Responsive Design", "Wireframe"]
+      tags: ["Figma", "User Interface Design", "Responsive Design", "Wireframe"],
+      link: "/skincare-product-website"
     },
     {
       title: "Memory Cards Mobile Game",
       description: "A casual mobile game where players flip cards to find matching pairs, helping improve memory and concentration skills.",
       image: "/memorycard.png",
-      tags: ["Unity", "C++"]
+      tags: ["Unity", "C++"],
+      link: "/projects/memory-cards-game"
     },
     {
       title: "Graphic Design",
       description: "Creative process of communicating ideas and messages through visual elements to create engaging and effective designs for digital and print media.",
       image: "/graphic.png",
       tags: ["Logo", "Tshirt", "Poster", "Lanyard", "Banner", "Flyer", "Sticker", "Illustrator", "Photoshop", "Canva"],
-      span: 2
+      span: 2,
+      link: "/projects/graphic-design"
     },
     {
       title: "Photography",
       description: "Art of capturing moments, emotions, and stories through a camera",
       image: "/photography.png",
       tags: ["Photography", "Videography", "Photo Editing", "Video Editing"],
-      span: 2 // This will span 2 columns
+      span: 2,
+      link: "/projects/photography"
     },
   ];
+
+  const handleProjectClick = (projectLink) => {
+    navigate(projectLink);
+  };
 
   return (
     <section 
@@ -125,14 +136,14 @@ export default function Projects() {
 
               {/* Overlay */}
               <div 
-                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-500"
+                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-500 pointer-events-none"
                 style={{
                   background: 'linear-gradient(to bottom, color-mix(in srgb, var(--primary) 90%, transparent), color-mix(in srgb, var(--accent) 90%, transparent))'
                 }}
               />
 
               {/* Content - Hidden by default, shows on hover */}
-              <div className="absolute inset-0 p-8 flex flex-col justify-end opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
+              <div className="absolute inset-0 p-8 flex flex-col justify-end opacity-0 group-hover:opacity-100 transition-all duration-500 z-10 pointer-events-auto">
                 <h3 className="text-2xl font-bold text-white mb-3">
                   {project.title}
                 </h3>
@@ -153,7 +164,10 @@ export default function Projects() {
                     </span>
                   ))}
                 </div>
-                <button className="self-start px-6 py-2 bg-white text-primary rounded-lg font-semibold text-sm hover:scale-105 transition-transform">
+                <button 
+                  onClick={() => handleProjectClick(project.link)}
+                  className="self-start px-6 py-2 bg-white text-primary rounded-lg font-semibold text-sm hover:scale-105 transition-transform"
+                >
                   View Project →
                 </button>
               </div>
@@ -170,11 +184,13 @@ export default function Projects() {
         }`}>
           <button 
             className="px-8 py-3 border-2 border-primary text-primary rounded-lg font-semibold transition-all hover:scale-105"
+            onClick={() => navigate("/portfolio")}
             onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = 'color-mix(in srgb, var(--primary) 10%, transparent)';
+              e.currentTarget.style.backgroundColor =
+                "color-mix(in srgb, var(--primary) 10%, transparent)";
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = 'transparent';
+              e.currentTarget.style.backgroundColor = "transparent";
             }}
           >
             View All Projects

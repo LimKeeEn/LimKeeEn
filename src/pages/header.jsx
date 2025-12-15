@@ -13,11 +13,11 @@ export default function Header({ activeSection, scrollToSection }) {
 
   const navItems = [
     { id: "home", label: "Home" },
-    { id: "about", label: "About" },
-    { id: "education", label: "Education" },
-    { id: "experience", label: "Experience" },
-    { id: "projects", label: "Projects" },
     { id: "skills", label: "Skills" },
+    { id: "projects", label: "Projects" },
+    // { id: "about", label: "About" },
+    // { id: "education", label: "Education" },
+    { id: "experience", label: "Experience" },
     { id: "contact", label: "Contact" },
   ];
 
