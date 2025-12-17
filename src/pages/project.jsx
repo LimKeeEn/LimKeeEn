@@ -36,6 +36,13 @@ export default function Projects() {
       link: "/umconvo-app"
     },
     {
+      title: "Data-driven Marketing & Content Planning",
+      description: "Plan smarter, generate content ideas, schedule across platforms, run and control ads, and get a clear performance insights — all in one place.",
+      image: "/futureReady.png",
+      tags: ["React", "TSX", ,"Tailwind CSS", "Node.js"],
+      link: "/digital-marketing-website"
+    },
+    {
       title: "Health Care Product Website",
       description: "Full-featured online shopping experience with seamless checkout and inventory management.",
       image: "/designduel.png",
@@ -43,19 +50,12 @@ export default function Projects() {
       link: "/skincare-product-website"
     },
     {
-      title: "Memory Cards Mobile Game",
-      description: "A casual mobile game where players flip cards to find matching pairs, helping improve memory and concentration skills.",
-      image: "/memorycard.png",
-      tags: ["Unity", "C++"],
-      link: "/projects/memory-cards-game"
-    },
-    {
       title: "Graphic Design",
       description: "Creative process of communicating ideas and messages through visual elements to create engaging and effective designs for digital and print media.",
       image: "/graphic.png",
       tags: ["Logo", "Tshirt", "Poster", "Lanyard", "Banner", "Flyer", "Sticker", "Illustrator", "Photoshop", "Canva"],
       span: 2,
-      link: "/projects/graphic-design"
+      link: "/designGallery"
     },
     {
       title: "Photography",
