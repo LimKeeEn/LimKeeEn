@@ -131,7 +131,7 @@ export default function Hero() {
             
             {/* Profile image */}
             <img
-              src="/profile-bg.png"
+              src="/me.png"
               alt="Hero Background"
               className="relative w-full max-w-md object-contain transform group-hover:scale-105 transition-transform duration-500"
             />

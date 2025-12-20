@@ -63,7 +63,7 @@ export default function Projects() {
       image: "/photography.png",
       tags: ["Photography", "Videography", "Photo Editing", "Video Editing"],
       span: 2,
-      link: "/projects/photography"
+      link: "/photoGallery"
     },
   ];
 
@@ -179,7 +179,7 @@ export default function Projects() {
         </div>
 
         {/* View All Button */}
-        <div className={`text-center mt-12 transition-all duration-1000 delay-700 ${
+        {/* <div className={`text-center mt-12 transition-all duration-1000 delay-700 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}>
           <button 
@@ -195,7 +195,7 @@ export default function Projects() {
           >
             View All Projects
           </button>
-        </div>
+        </div> */}
 
       </div>
     </section>
