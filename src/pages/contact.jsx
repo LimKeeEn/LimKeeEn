@@ -40,16 +40,15 @@ export default function Contact({ scrollToSection }) {
                   href="mailto:kee.en@example.com"
                   className="text-primary font-semibold hover:text-accent transition-colors"
                 >
-                  kee.en@example.com
+                  keeenlim0834@gmail.com
                 </a>
               </div>
               <div>
                 <p className="text-foreground/60 mb-2">Social Links</p>
                 <div className="flex gap-4">
                   {[
-                    { name: "GitHub", url: "#" },
-                    { name: "LinkedIn", url: "#" },
-                    { name: "Twitter", url: "#" },
+                    { name: "LinkedIn", url: "https://linkedin.com/in/lim-kee-en-6276232b5" },
+                    { name: "Instagram", url: "https://instagram.com/keeen_622" },
                   ].map((link) => (
                     <a
                       key={link.name}

@@ -132,7 +132,7 @@ const PhotoGallery = () => {
           onClick={() => setSelectedImage(null)}
         >
           <button
-            className="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors text-4xl w-12 h-12 flex items-center justify-center hover:rotate-90 transition-transform duration-300"
+            className="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors text-4xl w-12 h-12 flex items-center justify-center hover:rotate-90 duration-300"
             onClick={() => setSelectedImage(null)}
           >
             ×
