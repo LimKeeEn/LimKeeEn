@@ -14,6 +14,7 @@ import UMConvo from "./pages/umconvo-app";
 import DesignDuel from "./pages/skincare-product-website";
 import DigitalMarketing from "./pages/digital-marketing-website";
 import DesignGallery from "./pages/designGallery";
+import PhotoGallery from "./pages/photoGallery";
 
 /* ---------- Home Page Component ---------- */
 function Home() {
@@ -77,6 +78,7 @@ export default function App() {
         <Route path="/skincare-product-website" element={<DesignDuel />} />
         <Route path="/digital-marketing-website" element={<DigitalMarketing />} />
         <Route path="/designGallery" element={<DesignGallery />} />
+        <Route path="/photoGallery" element={<PhotoGallery />} />
       </Routes>
     </BrowserRouter>
   );
