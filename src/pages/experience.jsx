@@ -116,9 +116,9 @@ export default function Experience() {
             isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'
           }`}>
             <div className="relative w-full max-w-sm">
-              <div className="relative bg-gradient-to-br from-green-500 to-emerald-700 rounded-3xl overflow-hidden shadow-2xl">
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                 <img
-                  src="/profile-bg.png"
+                  src="/working-bg.png"
                   alt="Profile"
                   className="w-full h-auto object-cover"
                 />
