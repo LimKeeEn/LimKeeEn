@@ -237,7 +237,7 @@ export default function UMConvo() {
       </section>
 
       {/* Demo Video Section */}
-      <section
+      {/* <section
         ref={demoRef}
         className={`mt-32 transition-all duration-1000 ${
           demoVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
@@ -254,6 +254,29 @@ export default function UMConvo() {
               <source src="/AP2-Monitoring-Presentation-Video.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
+          </div>
+        </div>
+      </section> */}
+      <section
+        ref={demoRef}
+        className={`mt-32 transition-all duration-1000 ${
+          demoVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
+        }`}
+      >
+        <h3 className="text-3xl font-bold mb-6 text-primary text-center">
+          Demo Video
+        </h3>
+
+        <div className="flex justify-center pb-32">
+          <div className="w-full md:w-3/4 lg:w-1/2 h-[320px] bg-gradient-to-br from-gray-100 to-gray-200 rounded-3xl flex flex-col items-center justify-center text-center shadow-lg">
+            <span className="text-5xl mb-4">🚧</span>
+            <h4 className="text-2xl font-semibold text-gray-700 mb-2">
+              Coming Soon
+            </h4>
+            <p className="text-gray-500 max-w-sm">
+              The demo walkthrough video is currently in production and will be
+              available soon.
+            </p>
           </div>
         </div>
       </section>
