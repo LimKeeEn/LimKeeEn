@@ -48,7 +48,7 @@ export default function Hero() {
                 : 'opacity-0 translate-y-12'
             }`}
           >
-            UI Designer & Developer
+            Frontend Develop & UI/UX Design
           </p>
 
           <p 
