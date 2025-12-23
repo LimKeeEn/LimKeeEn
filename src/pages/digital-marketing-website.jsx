@@ -1,5 +1,20 @@
 import React, { useState, useEffect, useRef } from "react";
-import Header from "./header";
+
+// Header Component
+function Header({ activeSection, scrollToSection }) {
+  return (
+    <header className="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-md z-50 border-b border-gray-200">
+      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+        <h1 className="text-xl font-bold text-gray-800">Portfolio</h1>
+        <nav className="flex gap-6">
+          <button onClick={() => scrollToSection('home')} className="text-gray-600 hover:text-gray-900">Home</button>
+          <button onClick={() => scrollToSection('about')} className="text-gray-600 hover:text-gray-900">About</button>
+          <button onClick={() => scrollToSection('contact')} className="text-gray-600 hover:text-gray-900">Contact</button>
+        </nav>
+      </div>
+    </header>
+  );
+}
 
 export default function DigitalMarketing() {
   const [activeSection, setActiveSection] = useState("home");
@@ -104,7 +119,7 @@ export default function DigitalMarketing() {
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 px-6">
           {/* Left Column */}
           <div>
-            <h3 className="text-3xl font-bold mb-6 text-primary">About the Project</h3>
+            <h3 className="text-3xl font-bold mb-6 text-green-700">About the Project</h3>
             <p className="text-gray-600 text-lg leading-relaxed mb-6">
               Plan smarter, generate content ideas, schedule across platforms, run and control ads, and get a clear performance insights for digital marketing — <strong>all in one place.</strong>
             </p>
@@ -126,7 +141,7 @@ export default function DigitalMarketing() {
 
           {/* Right Column */}
           <div>
-            <h3 className="text-3xl font-bold mb-6 text-primary">Key Features</h3>
+            <h3 className="text-3xl font-bold mb-6 text-green-700">Key Features</h3>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <span className="text-2xl">💡</span>
@@ -178,7 +193,7 @@ export default function DigitalMarketing() {
         <div className="max-w-7xl mx-auto grid md:grid-cols-[1fr_2fr] gap-12 px-6">
           {/* Left Column */}
           <div className="flex items-center justify-center h-full">
-            <h2 className="text-4xl font-bold text-primary">
+            <h2 className="text-4xl font-bold text-green-700">
               The <br /> Challenges
             </h2>
           </div>
@@ -187,52 +202,35 @@ export default function DigitalMarketing() {
           <div>
             <p className="text-gray-600 text-xl leading-relaxed">
               Many growth-stage companies lack the resources or clarity to run effective marketing campaigns. They struggle with planning, execution, and measuring impact. 
-              Develop a tool that helps teams plan content, generate ideas with AI, schedule posts, and track marketing performance with easy-tounderstand dashboards.
+              Develop a tool that helps teams plan content, generate ideas with AI, schedule posts, and track marketing performance with easy-to-understand dashboards.
             </p>
           </div>
         </div>
       </section>
 
       {/* Demo Video Section */}
-      {/* <section
-        ref={demoRef}
-        className={`mt-32 transition-all duration-1000 ${
-          demoVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
-        }`}
-      >
-        <h3 className="text-3xl font-bold mb-6 text-primary text-center">Demo Video</h3>
-        <div className="flex justify-center pb-32">
-          <div className="w-full md:w-3/4 lg:w-1/2 aspect-video bg-gray-100 rounded-3xl overflow-hidden shadow-lg">
-            <video
-              controls
-              className="w-full h-full object-cover"
-            >
-              <source src="/weHaveADream.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </div>
-        </div>
-      </section> */}
       <section
         ref={demoRef}
         className={`mt-32 transition-all duration-1000 ${
           demoVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
         }`}
       >
-        <h3 className="text-3xl font-bold mb-6 text-primary text-center">
+        <h3 className="text-3xl font-bold mb-6 text-green-700 text-center">
           Demo Video
         </h3>
 
         <div className="flex justify-center pb-32">
-          <div className="w-full md:w-3/4 lg:w-1/2 h-[320px] bg-gradient-to-br from-gray-100 to-gray-200 rounded-3xl flex flex-col items-center justify-center text-center shadow-lg">
-            <span className="text-5xl mb-4">🚧</span>
-            <h4 className="text-2xl font-semibold text-gray-700 mb-2">
-              Coming Soon
-            </h4>
-            <p className="text-gray-500 max-w-sm">
-              The demo walkthrough video is currently in production and will be
-              available soon.
-            </p>
+          <div className="w-full md:w-3/4 lg:w-1/2 aspect-video rounded-3xl overflow-hidden shadow-lg">
+            <iframe
+              width="100%"
+              height="100%"
+              src="https://www.youtube.com/embed/tcPqv9l0etU"
+              title="Demo Video"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="w-full h-full"
+            ></iframe>
           </div>
         </div>
       </section>
