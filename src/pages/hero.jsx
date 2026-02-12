@@ -2,11 +2,52 @@ import React, { useState, useEffect } from "react";
 
 export default function Hero() {
   const [isVisible, setIsVisible] = useState(false);
+  const [currentTextIndex, setCurrentTextIndex] = useState(0);
+  const [displayedText, setDisplayedText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+  
+  const rotatingTexts = [
+    "Frontend Development",
+    "UI/UX Design",
+    "Graphic Design",
+    "Video Production"
+  ];
 
   useEffect(() => {
     // Trigger animation after component mounts
     setTimeout(() => setIsVisible(true), 100);
   }, []);
+
+  useEffect(() => {
+    const currentFullText = rotatingTexts[currentTextIndex];
+    const typingSpeed = isDeleting ? 50 : 100;
+    const pauseBeforeDelete = 1000;
+    const pauseBeforeType = 500;
+
+    const timeout = setTimeout(() => {
+      if (!isDeleting) {
+        // Typing
+        if (displayedText.length < currentFullText.length) {
+          setDisplayedText(currentFullText.slice(0, displayedText.length + 1));
+        } else {
+          // Finished typing, pause then start deleting
+          setTimeout(() => setIsDeleting(true), pauseBeforeDelete);
+        }
+      } else {
+        // Deleting
+        if (displayedText.length > 0) {
+          setDisplayedText(displayedText.slice(0, -1));
+        } else {
+          // Finished deleting, move to next text
+          setIsDeleting(false);
+          setCurrentTextIndex((prev) => (prev + 1) % rotatingTexts.length);
+          setTimeout(() => {}, pauseBeforeType);
+        }
+      }
+    }, typingSpeed);
+
+    return () => clearTimeout(timeout);
+  }, [displayedText, isDeleting, currentTextIndex]);
 
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
@@ -31,24 +72,27 @@ export default function Hero() {
           }`}
         >
 
-          <h1 
-            className={`text-4xl sm:text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-primary via-primary to-accent bg-clip-text text-transparent transition-all duration-1000 delay-100 ${
+          <div className="relative h-16 sm:h-20 md:h-24 flex items-center justify-center md:justify-start">
+            <h1
+              className={`text-2xl sm:text-3xl md:text-5xl mb-6 font-bold bg-gradient-to-r from-primary via-primary to-accent bg-clip-text text-transparent transition-all duration-1000 ${
+                isVisible 
+                  ? 'opacity-100' 
+                  : 'opacity-0'
+              }`}
+            >
+              {displayedText}
+              <span className="inline-block w-1 h-8 sm:h-10 md:h-12 bg-gradient-to-r from-primary to-accent ml-1 animate-blink"></span>
+            </h1>
+          </div>
+
+          <p 
+            className={`text-2xl md:text-3xl font-bold text-foreground/80 mb-6 transition-all duration-1000 delay-200 ${
               isVisible 
                 ? 'opacity-100 translate-y-0' 
                 : 'opacity-0 translate-y-12'
             }`}
           >
             Hi, I'm Kee En
-          </h1>
-
-          <p 
-            className={`text-2xl md:text-3xl font-light text-foreground/80 mb-6 transition-all duration-1000 delay-200 ${
-              isVisible 
-                ? 'opacity-100 translate-y-0' 
-                : 'opacity-0 translate-y-12'
-            }`}
-          >
-            Frontend Develop & UI/UX Design
           </p>
 
           <p 
@@ -58,7 +102,7 @@ export default function Hero() {
                 : 'opacity-0 translate-y-12'
             }`}
           >
-            Hello! I'm a Multimedia Computing student from the University of Malaya with hands-on experience in web and mobile development, as well as UI/UX design. Passionate about building meaningful digital experiences.
+            Hello! I'm a Multimedia Computing student from the University of Malaya with hands-on experience in web and mobile development, UI/UX design, as well as video production. Passionate about building meaningful digital experiences.
           </p>
 
           <div 
@@ -139,6 +183,22 @@ export default function Hero() {
         </div>
 
       </div>
+
+      {/* Add custom CSS for blinking cursor */}
+      <style jsx>{`
+        @keyframes blink {
+          0%, 49% {
+            opacity: 1;
+          }
+          50%, 100% {
+            opacity: 0;
+          }
+        }
+
+        .animate-blink {
+          animation: blink 1s infinite;
+        }
+      `}</style>
     </section>
   );
 }

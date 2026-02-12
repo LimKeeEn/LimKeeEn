@@ -1,25 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import Header from "./header";
 
 const PhotoGallery = () => {
   const [selectedImage, setSelectedImage] = useState(null);
-  const [activeSection, setActiveSection] = useState("portfolio");
   const [isVisible, setIsVisible] = useState(false);
-
-  // Scroll to top when page loads
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
 
   // Trigger animations on mount
   useEffect(() => {
     setTimeout(() => setIsVisible(true), 100);
   }, []);
-
-  // Header navigation scroll
-  const scrollToSection = (sectionId) => {
-    window.location.href = `/#${sectionId}`;
-  };
 
   // Sample photos - replace with your actual photos
   const photos = [
@@ -77,14 +65,8 @@ const PhotoGallery = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Header */}
-      <Header
-        activeSection={activeSection}
-        scrollToSection={scrollToSection}
-      />
-
       {/* Hero Section */}
-      <section className="pt-32 pb-16 px-6">
+      <section className="pt-16 pb-16 px-6">
         <div className="max-w-7xl mx-auto text-center">
           <h1 className={`text-5xl md:text-7xl font-bold mb-6 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-8'}`}>
             <span className="bg-gradient-to-r from-teal-600 to-blue-600 bg-clip-text text-transparent">

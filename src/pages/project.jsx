@@ -58,12 +58,12 @@ export default function Projects() {
       link: "/designGallery"
     },
     {
-      title: "Photography",
+      title: "Photography & Videography",
       description: "Art of capturing moments, emotions, and stories through a camera",
       image: "/photography.png",
       tags: ["Photography", "Videography", "Photo Editing", "Video Editing"],
       span: 2,
-      link: "/photoGallery"
+      link: "/production"
     },
   ];
 
