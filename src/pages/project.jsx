@@ -43,7 +43,7 @@ export default function Projects() {
       link: "/digital-marketing-website"
     },
     {
-      title: "Health Care Product Website",
+      title: "Skin Care Product Website",
       description: "Full-featured online shopping experience with seamless checkout and inventory management.",
       image: "/designduel.png",
       tags: ["Figma", "User Interface Design", "Responsive Design", "Wireframe"],

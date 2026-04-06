@@ -92,9 +92,12 @@ export default function UMConvo() {
                   </div>
                 </div>
                 <div className="absolute -bottom-16 left-1/2 transform -translate-x-1/2 w-56">
-                  <button className="w-full bg-white text-blue-600 font-semibold py-3 px-6 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                  <a href="https://www.figma.com/design/atbTwU5vZn51uMa1rqnw7m/UMConvo-App?node-id=0-1&t=ME0eZ1YdvP4nvMXa-1"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block w-full bg-white text-blue-600 font-semibold py-3 px-6 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 text-center">
                     User Interface
-                  </button>
+                  </a>
                 </div>
               </div>
 
@@ -129,9 +132,12 @@ export default function UMConvo() {
                   <div className="absolute left-1/2 top-1 transform -translate-x-1/2 w-20 h-1 bg-gray-400 rounded-full" />
                 </div>
                 <div className="absolute -bottom-16 left-1/2 transform -translate-x-1/2 w-56">
-                  <button className="w-full bg-blue-500 text-white font-semibold py-3 px-6 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                  <a href="https://www.figma.com/design/UytnaL9wvFD77dag1jysmf/Admin-Interface?node-id=0-1&t=eFudLDUfYMOkhBc2-1"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block w-full bg-white text-blue-600 font-semibold py-3 px-6 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 text-center">
                     Admin Interface
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>
